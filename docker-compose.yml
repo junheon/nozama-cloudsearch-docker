@@ -1,0 +1,13 @@
+version: '3'
+services:
+  cloudsearch:
+    build: .
+    ports:
+      - "15808:15808"
+    depends_on:
+      - mongodb
+      - elasticsearch
+  mongodb:
+    image: mongo:latest
+  elasticsearch:
+    image: elasticsearch
